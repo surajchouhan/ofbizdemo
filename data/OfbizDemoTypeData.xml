@@ -18,6 +18,12 @@ specific language governing permissions and limitations
 under the License.
 -->
 
+
 <entity-engine-xml>
+
+
+        <OfbizDemoType ofbizDemoTypeId="INTERNAL" description="Internal Demo - Office"/>
+        <OfbizDemoType ofbizDemoTypeId="EXTERNAL" description="External Demo - On Site"/>
+
 
 </entity-engine-xml>
