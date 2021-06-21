@@ -42,6 +42,27 @@ under the License.
     <!-- Request Mappings -->
     <request-map uri="createOfbizDemo"><security https="true" auth="true"/><response name="success" type="view" value="main"/></request-map>
     <request-map uri="FindOfbizDemo"><security https="true" auth="true"/><response name="success" type="view" value="FindOfbizDemo"/></request-map>
+
+
+    <request-map uri="createOfbizDemo">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="createOfbizDemoByJavaService"/>
+        <response name="success" type="view" value="main"/>
+    </request-map>
+
+    <request-map uri="createOfbizDemo">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="createOfbizDemoByGroovyService"/>
+        <response name="success" type="view" value="main"/>
+    </request-map>
+
+    <request-map uri="createOfbizDemoEvent">
+        <security https="true" auth="true"/>
+        <event type="java" path="com.companyname.ofbizdemo.events.OfbizDemoEvents" invoke="createOfbizDemoEvent"/>
+        <response name="success" type="view" value="main"/>
+        <response name="error" type="view" value="main"/>
+    </request-map>
+
     <!-- View Mappings -->
     <view-map name="main" type="screen" page="component://ofbizDemo/widget/OfbizDemoScreens.xml#main"/>
     <view-map name="FindOfbizDemo" type="screen" page="component://ofbizDemo/widget/OfbizDemoScreens.xml#FindOfbizDemo"/>
