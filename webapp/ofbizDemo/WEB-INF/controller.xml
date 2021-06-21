@@ -41,7 +41,10 @@ under the License.
 
     <!-- Request Mappings -->
     <request-map uri="createOfbizDemo"><security https="true" auth="true"/><response name="success" type="view" value="main"/></request-map>
-    
+    <request-map uri="FindOfbizDemo"><security https="true" auth="true"/><response name="success" type="view" value="FindOfbizDemo"/></request-map>
     <!-- View Mappings -->
     <view-map name="main" type="screen" page="component://ofbizDemo/widget/OfbizDemoScreens.xml#main"/>
+    <view-map name="FindOfbizDemo" type="screen" page="component://ofbizDemo/widget/OfbizDemoScreens.xml#FindOfbizDemo"/>
+
 </site-conf>
+

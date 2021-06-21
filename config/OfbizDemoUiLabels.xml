@@ -39,4 +39,21 @@ under the License.
         <value xml:lang="zh">�?�?许你�?览这个页�?�。</value>
         <value xml:lang="zh-TW">�?�?許您檢視這個�?�?�.</value>
     </property>
+
+    <property key="OfbizDemoFind">
+        <value xml:lang="en-US">Find</value>
+    </property>
+    <property key="OfbizDemoFirstName">
+        <value xml:lang="en-US">First Name</value>
+    </property>
+    <property key="OfbizDemoId">
+        <value xml:lang="en-US">OFBiz Demo Id</value>
+    </property>
+    <property key="OfbizDemoLastName">
+        <value xml:lang="en-US">Last Name</value>
+    </property>
+    <property key="OfbizDemoAddFtl">
+        <value xml:lang="en-US">OfbizDemoAddFtl</value>
+    </property>
+
 </resource>
