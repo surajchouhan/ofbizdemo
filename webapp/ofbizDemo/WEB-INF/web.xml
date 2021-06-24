@@ -93,4 +93,19 @@ under the License.
         <welcome-file>index.html</welcome-file>
         <welcome-file>index.htm</welcome-file>
     </welcome-file-list>
+
+
+    <context-param>
+        <description>The
+            location of the main-decorator screen to use for this webapp; referred
+            to as a context variable in screen def XML files.</description>
+        <param-name>mainDecoratorLocation</param-name>
+        <param-value>component://ofbizDemo/widget/CommonScreens.xml</param-value>
+    </context-param>
+
+
+    <init-param>
+        <param-name>allowedPaths</param-name>
+        <param-value>/error:/control:/select:/index.html:/index.jsp:/default.html:/default.jsp:/images:/includes/maincss.css:/css:/js</param-value>
+    </init-param>
 </web-app>
