@@ -1,0 +1,50 @@
+<entity-engine-xml>
+    <Product productId="500" productTypeId="RAW_MATERIAL" internalName="Wood" productName="Wood"/>
+    <Product productId="501" productTypeId="RAW_MATERIAL" internalName="Nails" productName="Nails"/>
+    <Product productId="502" productTypeId="RAW_MATERIAL" internalName="Varnish" productName="Varnish"/>
+
+     <ProductFacility facilityId="WebStoreWarehouse" productId="500" minimumStock="25" reorderQuantity="100"/>
+    <ProductFacility facilityId="WebStoreWarehouse" productId="501" minimumStock="100" reorderQuantity="500"/>
+    <ProductFacility facilityId="WebStoreWarehouse" productId="502" minimumStock="5" reorderQuantity="20"/>
+
+    <Product productId="503"  productTypeId="FINISHED_GOOD" internalName="Table" productName="Table"/>
+    <ProductFacility productId="503" facilityId="WebStoreWarehouse" minimumStock="5"/>
+
+    <SupplierProduct productId="500" partyId="DemoSupplier"  availableFromDate="2005-01-01 00:00:00.000" supplierPrefOrderId="10_MAIN_SUPPL" supplierProductId="XYZWood" minimumOrderQuantity="0" currencyUomId="USD" lastPrice="11.00"/>
+    <SupplierProduct productId="501" partyId="DemoSupplier"  availableFromDate="2005-01-01 00:00:00.000" supplierPrefOrderId="10_MAIN_SUPPL" supplierProductId="124Nails" minimumOrderQuantity="0" currencyUomId="USD" lastPrice="4.00"/>
+    <SupplierProduct productId="502" partyId="DemoSupplier"  availableFromDate="2005-01-01 00:00:00.000" supplierPrefOrderId="10_MAIN_SUPPL" supplierProductId="ABCVarnish" minimumOrderQuantity="0" currencyUomId="USD" lastPrice="5.00"/>
+
+    <ProductAssoc productId="503" productIdTo="501" productAssocTypeId="MANUF_COMPONENT" fromDate="2001-05-13 12:00:00.000" quantity="20"/>
+    <ProductAssoc productId="503" productIdTo="500" productAssocTypeId="MANUF_COMPONENT" fromDate="2001-05-13 12:00:00.000" quantity="5"/>
+    <ProductAssoc productId="503" productIdTo="502" productAssocTypeId="MANUF_COMPONENT" fromDate="2001-05-13 12:00:00.000" quantity="1"/>
+
+    <WorkEffort workEffortId="600" workEffortTypeId="ROU_TASK" workEffortPurposeTypeId="ROU_MANUFACTURING" workEffortName="cut wood" description="cut wood to length" seqenceNo="10"/>
+    <WorkEffort workEffortId="601" workEffortTypeId="ROU_TASK" workEffortPurposeTypeId="ROU_MANUFACTURING" workEffortName="Nail Together" description="Nails wood Together" seqenceNo="20"/>
+    <WorkEffort workEffortId="602" workEffortTypeId="ROU_TASK" workEffortPurposeTypeId="ROU_MANUFACTURING" workEffortName="Sand the Table" description="Sand the Table" seqenceNo="30"/>
+    <WorkEffort workEffortId="603" workEffortTypeId="ROU_TASK" workEffortPurposeTypeId="ROU_MANUFACTURING" workEffortName="Varnish Table" description="Varnish the Table" seqenceNo="40"/>
+    <WorkEffort workEffortId="605" workEffortTypeId="ROUTING"  workEffortName="Table Routing" description="Routing to make Tables"/>
+
+
+    <WorkEffortAssoc workEffortIdFrom="605" workEffortIdTo="600" workEffortAssocTypeId="ROUTING_COMPONENT" sequenceNum="10" fromDate="2021-07-01 00:00:00.0"/>
+    <WorkEffortAssoc workEffortIdFrom="605" workEffortIdTo="601" workEffortAssocTypeId="ROUTING_COMPONENT" sequenceNum="20" fromDate="2021-07-01 00:00:00.0"/>
+    <WorkEffortAssoc workEffortIdFrom="605" workEffortIdTo="602" workEffortAssocTypeId="ROUTING_COMPONENT" sequenceNum="30" fromDate="2021-07-01 00:00:00.0"/>
+    <WorkEffortAssoc workEffortIdFrom="605" workEffortIdTo="603" workEffortAssocTypeId="ROUTING_COMPONENT" sequenceNum="40" fromDate="2021-07-01 00:00:00.0"/>
+
+    <WorkEffortGoodStandard workEffortId="605" productId="503" workEffortGoodStdTypeId="ROU_PROD_TEMPLATE" fromDate="2021-07-01 00:00:00.0"/>
+
+
+
+
+    <WorkEffort workEffortId="900" workEffortTypeId="PROD_ORDER_HEADER" currentStatusId="PRUN_CREATED" workEffortPurposeTypeId="WEPT_PRODUCTION_RUN" workEffortName="Table Routing" description="Routing To Make Table"  facilityId="WebStoreWareHouse" quantityToProduce="5"/>
+    <WorkEffort  workEffortId="901" workEffortTypeId="PROD_ORDER_TASK" currentStatusId="PRUN_CREATED" workEffortPurposeTypeId="WEPT_PRODUCTION_RUN" workEffortName="cut wood" workEffortParentId="900" description="cut wood to length" facilityId="WebStoreWarehouse" quantityToProduce="5"/>
+    <WorkEffort workEffortId="902" workEffortTypeId="PROD_ORDER_TASK" currentStatusId="PRUN_CREATED" workEffortPurposeTypeId="WEPT_PRODUCTION_RUN" workEffortName="Nails Together" workEffortParentId="900" description="Nail wood together" facilityId="WebStoreWarehouse" quantityToProduce="5"/>
+    <WorkEffort workEffortId="903" workEffortTypeId="PROD_ORDER_TASK" currentStatusId="PRUN_CREATED" workEffortPurposeTypeId="WEPT_PRODUCTION_RUN" workEffortName="Sand Table" workEffortParentId="900" description="Sand The Table" facilityId="WebStoreWarehouse" quantityToProduce="5"/>
+    <WorkEffort workEffortId="904" workEffortTypeId="PROD_ORDER_TASK" currentStatusId="PRUN_CREATED" workEffortPurposeTypeId="WEPT_PRODUCTION_RUN" workEffortName="Varnish Table" workEffortParentId="900" description="Varnish The Table" facilityId="WebStoreWarehouse" quantityToProduce="5"/>
+
+    <WorkEffortGoodStandard workEffortId="900" productId="503" workEffortGoodStdTypeId="PRUN_PROD_DELIV" fromDate="2021-07-30 10:32:13.000" estimatedQuantity="5" />
+    <WorkEffortGoodStandard workEffortId="901" productId="500" workEffortGoodStdTypeId="PRUNT_PROD_NEEDED" fromDate="2001-05-13 12:00:00.000" estimatedQuantity="25"/>
+    <WorkEffortGoodStandard workEffortId="901" productId="502" workEffortGoodStdTypeId="PRUNT_PROD_NEEDED" fromDate="2001-05-13 12:00:00.000" estimatedQuantity="5"/>
+    <WorkEffortGoodStandard workEffortId="902" productId="501" workEffortGoodStdTypeId="PRUNT_PROD_NEEDED" fromDate="2001-05-13 12:00:00.000" estimatedQuantity="25"/>
+
+
+</entity-engine-xml>
