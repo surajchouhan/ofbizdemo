@@ -56,4 +56,38 @@ under the License.
         <value xml:lang="en-US">OfbizDemoAddFtl</value>
     </property>
 
+
+    <property key ="FindProductionRun">
+        <value xml:lang="en-US">Find</value>
+    </property>
+    <property key="ManufacturingFindRouting">
+        <value xml:lang="en-US">Find</value>
+    </property>
+    <property key="ManufacturingFindRoutingTask">
+        <value xml:lang="en-US">Find</value>
+    </property>
+    <property key="ManufacturingFindCalendar">
+      <value xml:lang="en-US">Find</value>
+     </property>
+     <property key="ManufacturingFindCosts">
+         <value xml:lang="en-US">Find</value>
+     </property>
+
+    <property key="ManufacturingFindBillOfMaterials">
+        <value xml:lang="en-US">Find</value>
+    </property>
+    <property key="ManufacturingFindMRP">
+        <value xml:lang="en-US">Find</value>
+    </property>
+    <property key="ManufacturingFindShipmentPlans">
+        <value xml:lang="en-US">Find</value>
+    </property>
+
+    <property key="ManufacturingFindReports">
+        <value xml:lang="en-US">Find</value>
+    </property>
+
+
+
+
 </resource>

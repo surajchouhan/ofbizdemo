@@ -1,0 +1,40 @@
+
+<entity-engine-xml>
+    <Party partyId="sun261"  partyTypeId="PARTY_GROUP"/>
+    <PartyRole partyId="sun261" roleTypeId="SUPPLIER"/>
+    <Person partyId="sun261" firstName="Steve" middleName="Aus" lastName="Smith"/>
+
+    <PartyGroup partyId="sun261" groupName="SUPPLIER_GROUP"/>
+
+    <ContactMech contactMechId="262" contactMechTypeId="EMAIL_ADDRESS" infoString="steve.smith@gmail.com"/>
+    <PartyContactMech partyId="sun261" contactMechId="262" fromDate="2003-01-01 00:00:00.000"/>
+    <PartyContactMechPurpose partyId="sun261" contactMechId="262" fromDate="2003-01-01 00:00:00.000" contactMechPurposeTypeId="PRIMARY_EMAIL"/>
+    <ContactMech contactMechId="263" contactMechTypeId="TELECOME_NUMBER" />
+    <TelecomNumber contactMechId="263" countryCode="+91" areaCode="200" contactNumber="8876465261"/>
+    <PartyContactMech partyId="sun261" contactMechId="263" fromDate="2003-01-01 00:00:00.000"/>
+    <PartyContactMechPurpose partyId="sun261" contactMechId= "263" contactMechPurposeTypeId="PRIMARY_PHONE" fromDate="2021-07-15 00:00:00.0"/>
+
+
+    <ContactMech contactMechId="264" contactMechTypeId="POSTAL_ADDRESS"/>
+    <PostalAddress contactMechId="264"  toName="DemoSupplier"  address="163 radhavallab market"  city="Khargone" postalCode="451001" countryGeoId="IND" />
+    <PartyContactMech partyId="sun261" contactMechId="264" fromDate="2021-06-10 00:00:00.0" />
+
+    <PartyContactMechPurpose partyId="sun261" contactMechId= "264" contactMechPurposeTypeId="PRIMARY_LOCATION" fromDate="2021-06-10 00:00:00.0"/>
+    <PartyContactMechPurpose partyId="sun261" contactMechId= "264" contactMechPurposeTypeId="GENERAL_LOCATION" fromDate="2021-06-10 00:00:00.0"/>
+    <!--Product Demoproduct A/>-->
+    <Product productId="pro123" productName="DemoProductA"  internalName="ProductA"/>
+    <ProductAssoc productId="pro123" productIdTo="GZ-1000" productAssocTypeId="PRODUCT_COMPONENT" fromDate="2001-05-13 12:00:00.000"/>
+    <Facility facilityId="WebStoreWareHouse"  facilityTypeId="WAREHOUSE"/>
+    <ProductFacility facilityId="WebStoreWareHouse" productId="pro123" minimumStock="2" reorderQuantity="10" daysToShip="2" lastInventoryCount="20"/>
+    <FacilityLocation facilityId="WebStoreWareHouse" locationSeqId="TLTLTLLL01" locationTypeEnumId="FLT_BULK" areaId="TL" aisleId="TL" sectionId="TL" levelId="LL" postionId="01"/>
+    <ProductFacilityLocation productId="pro123" facilityId="WebStoreWareHouse" locationSeqId="TLTLTLLL01" minimumStock="20" moveQuantity="5"/>
+
+    <!--Product DemoProduct B/>-->
+    <Product productId="pro124" productName="DemoProductB" internalName="ProductB"/>
+    <ProductAssoc productId="pro124" productIdTo="GZ-1001" productAssocTypeId="	MANUF_COMPONENT" fromDate="2001-06-13 12:00:00.000"/>
+    <Facility facilityId="MyRetailStore" facilityTypeId="RETAIL_STORE"/>
+    <ProductFacility facilityId="MyRetailStore" productId="pro124" minimumStock="10" reorderQuantity="5" daysToShip="1" lastInventoryCount="50"/>
+
+    <FacilityLocation facilityId="MyRetailStore" locationSeqId="12345678910" locationTypeEnumId="FLT_PICKLOC" areaId="12" aisleId="34" sectionId="56" levelId="78" postionId="910"/>
+    <ProductFacilityLocation productId="pro124" facilityId="MyRetailStore" locationSeqId="12345678910" minimumStock="3" moveQuantity="15"/>
+</entity-engine-xml>

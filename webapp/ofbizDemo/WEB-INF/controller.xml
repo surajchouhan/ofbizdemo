@@ -68,10 +68,25 @@ under the License.
         <response name="success" type="view" value="AddOfbizDemoFtl"/>
     </request-map>
 
+    <!--Request map for Find production run-->
+    <request-map uri="FindProductionRun">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="FindProductionRun"/>
+    </request-map>
+
+    <!-- request map for List Production Run-->
+
+    <request-map uri="ListProductionRun">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="ListProductRun"/>
+    </request-map>
+
     <!-- View Mappings -->
     <view-map name="main" type="screen" page="component://ofbizDemo/widget/OfbizDemoScreens.xml#main"/>
     <view-map name="FindOfbizDemo" type="screen" page="component://ofbizDemo/widget/OfbizDemoScreens.xml#FindOfbizDemo"/>
-
+    <view-map name="FindProductionRun" type="screen" page="component://ofbizDemo/widget/OfbizDemoScreens.xml#FindProductionRun"/>
     <view-map name="AddOfbizDemoFtl" type="screen" page="component://ofbizDemo/widget/OfbizDemoScreens.xml#AddOfbizDemoFtl"/>
+    <view-map name="ListProductionRun" type="screen" page="component://ofbizDemo/widget/ofbizDemoScreens.xml#ListProductionRun"/>
+
 </site-conf>
 

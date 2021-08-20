@@ -1,0 +1,70 @@
+<entity-engine-xml>
+    <Product productId="450" productTypeId="RAW_MATERIAL" internalName="page" productName="page"/>
+    <Product productId="451" productTypeId="RAW_MATERIAL" internalName="binding pin" productName="binding pin"/>
+
+    <Product productId="452" productTypeId="FINISHED_GOOD" productName="copy" internalName="copy"/>
+
+    <ProductFacility facilityId="WebStoreWarehouse" productId="450" minimumStock="100" reorderQuantity="500"/>
+    <ProductFacility facilityId="WebStoreWarehouse" productId="451" minimumStock="10" reorderQuantity="50"/>
+
+    <ProductFacility facilityId="WebStoreWarehouse" productId="452" minimumStock="5"/>
+
+    <SupplierProduct productId="450" partyId="DemoSupplier" availableFromDate="2005-01-01 00:00:00.000" supplierPrefOrderId="10_MAIN_SUPPL" supplierProductId="page" minimumOrderQuantity="0" currencyUomId="USD" lastPrice="20.0"/>
+    <SupplierProduct productId="451" partyId="DemoSupplier" availableFromDate="2005-01-01 00:00:00.000" supplierPrefOrderId="10_MAIN_SUPPL" supplierProductId="binding pin" minimumOrderQuantity="0" currencyUomId="USD" lastPrice="10.0"/>
+
+    <ProductAssoc productId="452" productIdTo="450" productAssocTypeId="MANUF_COMPONENT" fromDate="2002-05-13 12:00:00.000" quantity="20"/>
+    <ProductAssoc productId="452" productIdTo="451" productAssocTypeId="MANUF_COMPONENT" fromDate="2002-05-13 12:00:00.000" quantity="5"/>
+
+    <WorkEffort workEffortId="10070" workEffortTypeId="ROU_TASK" workEffortPurposeTypeId="ROU_MANUFACTURING" workEffortName="shape page" description="shape the pages" seqenceNo="10"/>
+    <WorkEffort workEffortId="10071" workEffortTypeId="ROU_TASK" workEffortPurposeTypeId="ROU_MANUFACTURING" workEffortName="make heap" description="make heap of pages" seqenceNo="20"/>
+    <WorkEffort workEffortId="10072" workEffortTypeId="ROU_TASK" workEffortPurposeTypeId="ROU_MANUFACTURING" workEffortName="steped pin" description="steped pin on the pages" seqenceNo="30"/>
+    <WorkEffort workEffortId="10073" workEffortTypeId="ROU_TASK" workEffortPurposeTypeId="ROU_MANUFACTURING" workEffortName="copy routing" description=" routing make the copy" seqenceNo="40"/>
+
+    <WorkEffortAssoc workEffortIdFrom="10073" workEffortIdTo="10070" workEffortAssocTypeId="ROUTING_COMPONENT" sequenceNum="10" fromDate="2021-07-01 00:00:00.0"/>
+    <WorkEffortAssoc workEffortIdFrom="10073" workEffortIdTo="10071" workEffortAssocTypeId="ROUTING_COMPONENT" sequenceNum="20" fromDate="2021-07-01 00:00:00.0"/>
+    <WorkEffortAssoc workEffortIdFrom="10073" workEffortIdTo="10072" workEffortAssocTypeId="ROUTING_COMPONENT" sequenceNum="30" fromDate="2021-07-01 00:00:00.0"/>
+
+
+    <WorkEffortGoodStandard workEffortId="10083" productId="452" workEffortGoodStdTypeId="ROU_PROD_TEMPLATE" fromDate="2021-07-01 00:00:00.0"/>
+
+    <WorkEffort workEffortId="10079" workEffortTypeId="PROD_ORDER_HEADER" currentStatusId="PRUN_CREATED" workEffortPurposeTypeId="WEPT_PRODUCTION_RUN" workEffortName=" copy routing" description="routing make the copy" facilityId="WebStoreWarehouse" quantityToProduce="5"/>
+    <WorkEffort workEffortId="10080" workEffortTypeId="PROD_ORDER_TASK" currentStatusId="PRUN_CREATED" workEffortPurposeTypeId="WEPT_PRODUCTION_RUN" workEffortName="shape page" description="shape the pages" facilityId="WebStoreWarehouse" quantityToProduce="5"/>
+    <WorkEffort workEffortId="10081" workEffortTypeId="PROD_ORDER_TASK" currentStatusId="PRUN_CREATED" workEffortPurposeTypeId="WEPT_PRODUCTION_RUN" workEffortName="make heap" description="make heap of pages" facilityId="WebStoreWarehouse" quantityToProduce="5"/>
+    <WorkEffort workEffortId="10082" workEffortTypeId="PROD_ORDER_TASK" currentStatusId="PRUN_CREATED" workEffortPurposeTypeId="WEPT_PRODUCTION_RUN" workEffortName="steped pin" description="steped pin on the pages" facilityId="WebStoreWarehouse" quantityToProduce="5"/>
+
+    <WorkEffortGoodStandard  workEffortId="10079" productId="452" workEffortGoodStdTypeId="PRUN_PROD_DELIV"  fromDate="2021-07-30 10:32:13.000" statusId="WEGS_CREATED" estimatedQuantity="5"/>
+    <WorkEffortGoodStandard workEffortId="10080" productId="450" workEffortGoodStdTypeId="PRUNT_PROD_NEEDED" fromDate="2021-07-30 10:32:13.000" statusId="WEGS_CREATED" estimatedQuantity="100"/>
+    <WorkEffortGoodStandard workEffortId="10081" productId="451" workEffortGoodStdTypeId="PRUNT_PROD_NEEDED" fromDate="2021-07-30 10:32:13.000" statusId="WEGS_CREATED" estimatedQuantity="25"/>
+
+    <WorkEffortStatus workEffortId="10079" statusId="PRUN_CREATED" statusDateTime="2021-08-06 15:30:24.920" setByUserLogin="admin" />
+    <WorkEffortStatus workEffortId="10079" statusId="PRUN_DOC_PRINTED"  statusDateTime="2021-08-06 15:32:45.022" setByUserLogin="admin"/>
+    <WorkEffortStatus workEffortId="10079" statusId="PRUN_RUNNING" statusDateTime="2021-08-06 15:35:58.693" setByUserLogin="admin"/>
+
+
+    <WorkEffortStatus workEffortId="10080" statusId="PRUN_CREATED" statusDateTime="2021-08-06 15:30:25.111" setByUserLogin="admin"/>
+    <WorkEffortStatus workEffortId="10080" statusId="PRUN_DOC_PRINTED" statusDateTime="2021-08-06 15:30:25.111" setByUserLogin="admin"/>
+    <WorkEffortStatus workEffortId="10080" statusId="PRUN_RUNNING" statusDateTime="2021-08-06 15:30:25.111" setByUserLogin="admin"/>
+
+
+    <WorkEffortStatus workEffortId="10081" statusId="PRUN_CREATED" statusDateTime="2021-08-06 15:30:25.111" setByUserLogin="admin"/>
+    <WorkEffortStatus workEffortId="10081" statusId="PRUN_DOC_PRINTED" statusDateTime="2021-08-06 15:30:25.111" setByUserLogin="admin"/>
+    <WorkEffortStatus workEffortId="10081" statusId="PRUN_RUNNING" statusDateTime="2021-08-06 15:30:25.111" setByUserLogin="admin"/>
+
+    <WorkEffortStatus workEffortId="10082" statusId="PRUN_CREATED" statusDateTime="2021-08-06 15:30:25.111" setByUserLogin="admin"/>
+    <WorkEffortStatus workEffortId="10082" statusId="PRUN_DOC_PRINTED" statusDateTime="2021-08-06 15:30:25.111" setByUserLogin="admin"/>
+    <WorkEffortStatus workEffortId="10082" statusId="PRUN_RUNNING"  statusDateTime="2021-08-06 15:30:25.111" setByUserLogin="admin"/>
+
+    <WorkEffortStatus workEffortId="10083" statusId="PRUN_CREATED" statusDateTime="2021-08-06 15:30:25.111" setByUserLogin="admin"/>
+    <WorkEffortStatus workEffortId="10083" statusId="PRUN_DOC_PRINTED" statusDateTime="2021-08-06 15:30:25.111" setByUserLogin="admin"/>
+    <WorkEffortStatus workEffortId="10083" statusId="PRUN_RUNNING"  statusDateTime="2021-08-06 15:30:25.111" setByUserLogin="admin"/>
+
+
+
+
+
+
+
+
+
+
+</entity-engine-xml>

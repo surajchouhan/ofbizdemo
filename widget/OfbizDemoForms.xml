@@ -69,7 +69,52 @@ under the License.
         <field name="comments" title="${uiLabelMap.OfbizDemoComment}"><display/></field>
     </form>
 
+    <!--Find production form-->
+  <form name="FindProductionRun" type="single" target="FindProductionRun" default-map-name="parameters">
+    <field name="workEffortTypeId"><hidden value="PROD_ORDER_HEADER"/></field>
+    <field name="workEffortId" title="${uiLabelMap.ManufacturingProductionRunId}"><text-find/></field>
+    <field name="currentStatusId" title="${uiLabelMap.CommonStatus}">
+    <drop-down allow-multiple="true" >
+        <entity-options  entity-name="StatusItem" key-field-name="statusId">
+            <entity-constraint name="statusTypeId" value="PRODUCTION_RUN"/>
+        </entity-options>
+    </drop-down>
+     </field>
+<field name="productId" title="${uiLabel.ProductProductId}"><lookup target-form-name="LookUpProduct"/></field>
+<field name="workEffortRunName" title="${uiLabelMap.ManufacturingProductionRunName} "><text-find/></field>
+<field name="estimatedStartDate" title="${uiLabelMap.ManufacturingStartDate}"><date-find default-value="${nowTimestamp}"/></field>
+<field name="facilityId" title="${uiLabel.ManufacturingFacilityId}">
+   <drop-down allow-empty="true">
+       <entity-options entity-name="Facility" key-field-name="facilityId" description="${facilityName} [${facilityId}]">
+           <entity-constraint name="facilityTypeId" value="WAREHOUSE"/>
+       </entity-options>
+   </drop-down>
+</field>
+<field name="submitButton" title="{uiLabelMap.ManufacturingCommonFind}"><submit/></field>
 
+  </form>
+
+
+<form name="ListProductionRun" type="list"  list-name="listIt" paginate-target="FindProductionRun" default-entity-name="" separate-columns="true"
+      odd-row-style="alternate-row" header-row-style="header-row-2" default-table-style="basic-table hover-bar">
+
+<actions>
+    <service service-name="performFind" result-map="result" result-map-list="listIt">
+        <field-map field-name="inputFields" from-field="ofbizDemoCtx"/>
+        <field-map field-name="entityName" from-field=""/>
+        <field-map field-name="orderBy" from-field="parameters.sortField"/>
+        <field-map field-name="viewIndex" from-field="viewIndex"/>
+        <field-map field-name="viewSize" from-field="viewSize"/>
+
+    </service>
+
+</actions>
+<field name="workEffortId" title="${parameters.ManufacturingProductionRunId}"/>
+<field name="currentStatus" title="${parameters.ManufacturingStatus}"/>
+<field name="productId" title="${parameters.ManufacturingProductId}"/>
+<field name="workEffortName" title="${parameters.ManufacturingWorkEffortName}"/>
+<field name="estimatedStartDate" title="${parameters.ManufacturingStartDate}"/>
+<field name="facilityId" title="${parameters.ManufacturingFacilityId}"/>
+</form>
 
 </forms>
-
