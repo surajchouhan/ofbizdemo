@@ -2,12 +2,11 @@
     <Product productId="1100" productTypeId="RAW_MATERIAL" internalName= "Demo1" productName="Demo1"/>
     <Product productId="1101" productTypeId="RAW_MATERIAL" internalName="Demo2" productName="Demo2"/>
     <Product productId="1102" productTypeId="RAW_MATERIAL" internalName="Demo3" productName="Demo3"/>
+    <Product productId="1103" productTypeId="FINISHED_GOOD" internalName="Demo" productName="Demo"/>
 
     <ProductPrice productId="1103" productPricePurposeId="PURCHASE" productPriceTypeId="DEFAULT_PRICE" currencyUomId="USD" productStoreGroupId="_NA_" fromDate="2001-05-13 12:00:00.0" price="455.99" createdDate="2001-05-13 12:00:00.0" createdByUserLogin="admin" lastModifiedDate="2001-05-13 12:00:00.0" lastModifiedByUserLogin="admin"/>
     <ProductPrice productId="1101" productPricePurposeId="PURCHASE" productPriceTypeId="DEFAULT_PRICE" currencyUomId="USD" productStoreGroupId="_NA_" fromDate="2001-05-13 12:00:00.0" price="400.99" createdDate="2001-05-13 12:00:00.0" createdByUserLogin="admin" lastModifiedDate="2001-05-13 12:00:00.0" lastModifiedByUserLogin="admin"/>
     <ProductPrice productId="1102" productPricePurposeId="PURCHASE" productPriceTypeId="DEFAULT_PRICE" currencyUomId="USD" productStoreGroupId="_NA_" fromDate="2001-05-13 12:00:00.0" price="435.99" createdDate="2001-05-13 12:00:00.0" createdByUserLogin="admin" lastModifiedDate="2001-05-13 12:00:00.0" lastModifiedByUserLogin="admin"/>
-
-    <Product productId="1103" productTypeId="FINISHED_GOOD" internalName="Demo" productName="Demo"/>
 
     <ProductFacility facilityId="WebStoreWarehouse" productId="1100" minimumStock="10" reorderQuantity="25"/>
     <ProductFacility facilityId="WebStoreWarehouse" productId="1101" minimumStock="20" reorderQuantity="15"/>
@@ -47,8 +46,6 @@
     <WorkEffortGoodStandard workEffortId="2302" productId="1101" workEffortGoodStdTypeId="PRUNT_PROD_NEEDED" fromDate="2021-07-30 10:32:13.000" statusId="WEGS_CREATED" estimatedQuantity="15"/>
     <WorkEffortGoodStandard workEffortId="2303" productId="1102" workEffortGoodStdTypeId="PRUNT_PROD_NEEDED" fromDate="2021-07-30 10:32:13.000" statusId="WEGS_CREATED" estimatedQuantity="20"/>
 
-
-
     <WorkEffortStatus workEffortId="2300" statusId="PRUN_CREATED" statusDatetime="2021-08-06 15:30:24.920" setByUserLogin="admin"/>
     <WorkEffortStatus workEffortId="2300" statusId="PRUN_DOC_PRINTED" statusDatetime="2021-08-06 15:32:45.022" setByUserLogin="admin"/>
     <WorkEffortStatus workEffortId="2300" statusId="PRUN_RUNNING" statusDatetime="2021-08-06 15:35:58.693" setByUserLogin="admin"/>
@@ -59,20 +56,15 @@
     <WorkEffortStatus workEffortId="2301" statusId="PRUN_RUNNING" statusDatetime="2021-08-06 15:30:25.111" setByUserLogin="admin"/>
     <WorkEffortStatus workEffortId="2301" statusId="PRUN_COMPLETED" statusDatetime="2021-08-06 15:35:58.693" setByUserLogin="admin"/>
 
-
     <WorkEffortStatus workEffortId="2302" statusId="PRUN_CREATED" statusDatetime="2021-08-06 15:30:25.111" setByUserLogin="admin"/>
     <WorkEffortStatus workEffortId="2302" statusId="PRUN_DOC_PRINTED" statusDatetime="2021-08-06 15:30:25.111" setByUserLogin="admin"/>
     <WorkEffortStatus workEffortId="2302" statusId="PRUN_RUNNING"  statusDatetime="2021-08-06 15:30:25.111" setByUserLogin="admin"/>
     <WorkEffortStatus workEffortId="2302" statusId="PRUN_COMPLETED" statusDatetime="2021-08-06 15:35:58.693" setByUserLogin="admin"/>
 
-
     <WorkEffortStatus workEffortId="2303" statusId="PRUN_CREATED" statusDatetime="2021-08-06 15:30:25.111" setByUserLogin="admin"/>
     <WorkEffortStatus workEffortId="2303" statusId="PRUN_DOC_PRINTED" statusDatetime="2021-08-06 15:30:25.111" setByUserLogin="admin"/>
     <WorkEffortStatus workEffortId="2303" statusId="PRUN_RUNNING" statusDatetime="2021-08-06 15:30:25.111" setByUserLogin="admin"/>
     <WorkEffortStatus workEffortId="2303" statusId="PRUN_COMPLETED" statusDatetime="2021-08-06 15:35:58.693" setByUserLogin="admin"/>
-
-
-
 
     <InventoryItem inventoryItemId="50" inventoryItemTypeId="NON_SERIAL_INV_ITEM" productId="1100" ownerPartyId="Company" facilityId="WebStoreWarehouse" quantityOnHandTotal="1000" availableToPromiseTotal="1000" accountingQuantityTotal="1000"  unitCost="10" currencyUomId="USD"/>
     <InventoryItem inventoryItemId="51" inventoryItemTypeId="NON_SERIAL_INV_ITEM" productId="1101" ownerPartyId="Company" facilityId="WebStoreWarehouse" quantityOnHandTotal="1000" availableToPromiseTotal="1000" accountingQuantityTotal="1000"  unitCost="10" currencyUomId="USD"/>
@@ -87,7 +79,6 @@
     <InventoryItemDetail inventoryItemId="51" inventoryItemDetailSeqId="0001" effectiveDate="2021-08-06 15:30:25.111" quantityOnHandDiff="1000" availableToPromiseDiff="1000"/>
     <InventoryItemDetail inventoryItemId="52" inventoryItemDetailSeqId="0001" effectiveDate="2021-08-06 15:30:25.111" quantityOnHandDiff="1000" availableToPromiseDiff="1000"/>
 
-    <!-- dought-->
     <InventoryItemDetail inventoryItemId="50" inventoryItemDetailSeqId="0002" effectiveDate="2021-08-06 15:30:25.111" quantityOnHandDiff="-25" availableToPromiseDiff="-25"/>
     <InventoryItemDetail inventoryItemId="51" inventoryItemDetailSeqId="0002" effectiveDate="2021-08-06 15:30:25.111" quantityOnHandDiff="-15" availableToPromiseDiff="-15"/>
     <InventoryItemDetail inventoryItemId="52" inventoryItemDetailSeqId="0002" effectiveDate="2021-08-06 15:30:25.111" quantityOnHandDiff="-20" availableToPromiseDiff="-20" />
@@ -111,446 +102,13 @@
     <CostComponentCalc costComponentCalcId="4003" description="Genric cost" fixedCost="1.00" currencyUomId="USD" costCustomMethodId="PROD_PERC_FORMULA"/>
     <ProductCostComponentCalc productId="1103" costComponentTypeId="GEN_COST" costComponentCalcId="4003" fromDate="2005-12-31 00:01:00.0"/>
 
-
-    <!--cost calculation for Inventory item-->
-
     <!-- cost information for raw material -->
     <CostComponent costComponentId="3000" workEffortId="2100" costComponentTypeId="EST_STD_MAT_COST" productId="1100" fromDate="2005-12-31 00:01:00.0"  costUomId="USD" cost="6"/>
     <CostComponent costComponentId="3001" workEffortId="2101" costComponentTypeId="EST_STD_MAT_COST" productId="1101" fromDate="2005-12-31 00:01:00.0" costUomId="USD" cost="8"/>
     <CostComponent costComponentId="3002" workEffortId="2102" costComponentTypeId="EST_STD_MAT_COST" productId="1102" fromDate="2005-12-31 00:01:00.0" costUomId="USD" cost="7"/>
 
-
     <WorkEffortInventoryProduced workEffortId="2300" inventoryItemId="100" />
     <InventoryItem inventoryItemId="100" inventoryItemTypeId="NON_SERIAL_INV_ITEM" productId="1103" ownerPartyId="Company" facilityId="WebStoreWarehouse" quantityOnHandTotal="1" availableToPromiseTotal="1" accountingQuantityTotal="1" unitCost="607" currencyUomId="USD"/>
     <InventoryItemDetail inventoryItemId="100" inventoryItemDetailSeqId="0001" quantityOnHandDiff="1" availableToPromiseDiff="1" accountingQuantityDiff="0" workEffortId="2300" />
     <InventoryItemDetail inventoryItemId="100" inventoryItemDetailSeqId="0002" quantityOnHandDiff="0" availableToPromiseDiff="0" accountingQuantityDiff="1" workEffortId="2300"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </entity-engine-xml>
