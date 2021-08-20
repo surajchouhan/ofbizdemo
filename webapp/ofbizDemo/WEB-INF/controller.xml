@@ -78,7 +78,7 @@ under the License.
 
     <request-map uri="ListProductionRun">
         <security https="true" auth="true"/>
-        <response name="success" type="view" value="ListProductRun"/>
+        <response name="success" type="view" value="ListProductionRun"/>
     </request-map>
 
     <!-- View Mappings -->

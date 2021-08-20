@@ -100,7 +100,7 @@ under the License.
     <screen name="FindProductionRun">
 
         <section>
-            <set field="titleProperty"value="FindProductionRun"/>
+            <set field="titleProperty" value="FindProductionRun"/>
             <set field="headerItem" value="JobShop"/>
             <set field="helpAnchor" value="jobshop_or_productionrun"/>
             <set field="viewIndex" fromField="parameters.VIEW_INDEX" type="Integer"/>
