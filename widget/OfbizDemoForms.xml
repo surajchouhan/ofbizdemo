@@ -37,17 +37,17 @@ under the License.
     </form>
     <form name="FindOfbizDemo" type="single" target="FindOfbizDemo" default-entity-name="OfbizDemo">
         <field name="noConditionFind"><hidden value="Y"/> <!-- if this isn't there then with all fields empty no query will be done --></field>
-        <field name="ofbizDemoId" title="${uiLabelMap.OfbizDemoId}"><text-find/></field>
-        <field name="firstName" title="${uiLabelMap.OfbizDemoFirstName}"><text-find/></field>
-        <field name="lastName" title="${uiLabelMap.OfbizDemoLastName}"><text-find/></field>
-        <field name="ofbizDemoTypeId" title="${uiLabelMap.OfbizDemoType}">
+        <field name="ofbizDemoId" title="${uiLabelMap.OfbizDemoID}"><text-find/></field>
+        <field name="firstName" title="${uiLabelMap.OfbizDemoFirstNamE}"><text-find/></field>
+        <field name="lastName" title="${uiLabelMap.OfbizDemoLastNamE}"><text-find/></field>
+        <field name="ofbizDemoTypeId" title="${uiLabelMap.OfbizDemoTypE}">
             <drop-down allow-empty="true" current-description="">
                 <entity-options description="${description}" key-field-name="ofbizDemoTypeId" entity-name="OfbizDemoType">
                     <entity-order-by field-name="description"/>
                 </entity-options>
             </drop-down>
         </field>
-        <field name="searchButton" title="${uiLabelMap.CommonFind}" widget-style="smallSubmit"><submit button-type="button" image-location="/images/icons/magnifier.png"/></field>
+        <field name="searchButton" title="${uiLabelMap.FIND}" widget-style="smallSubmit"><submit button-type="button" image-location="/images/icons/magnifier.png"/></field>
     </form>
 
     <form name="ListOfbizDemo" type="list" list-name="listIt" paginate-target="FindOfbizDemo" default-entity-name="OfbizDemo" separate-columns="true"
@@ -72,49 +72,44 @@ under the License.
     <!--Find production form-->
   <form name="FindProductionRun" type="single" target="FindProductionRun" default-map-name="parameters">
     <field name="workEffortTypeId"><hidden value="PROD_ORDER_HEADER"/></field>
-    <field name="workEffortId" title="${uiLabelMap.ManufacturingProductionRunId}"><text-find/></field>
-    <field name="currentStatusId" title="${uiLabelMap.CommonStatus}">
-    <drop-down allow-multiple="true" >
-        <entity-options  entity-name="StatusItem" key-field-name="statusId">
-            <entity-constraint name="statusTypeId" value="PRODUCTION_RUN"/>
-        </entity-options>
-    </drop-down>
-     </field>
-<field name="productId" title="${uiLabel.ProductProductId}"><lookup target-form-name="LookUpProduct"/></field>
-<field name="workEffortRunName" title="${uiLabelMap.ManufacturingProductionRunName} "><text-find/></field>
-<field name="estimatedStartDate" title="${uiLabelMap.ManufacturingStartDate}"><date-find default-value="${nowTimestamp}"/></field>
-<field name="facilityId" title="${uiLabel.ManufacturingFacilityId}">
-   <drop-down allow-empty="true">
-       <entity-options entity-name="Facility" key-field-name="facilityId" description="${facilityName} [${facilityId}]">
-           <entity-constraint name="facilityTypeId" value="WAREHOUSE"/>
-       </entity-options>
-   </drop-down>
-</field>
-<field name="submitButton" title="{uiLabelMap.ManufacturingCommonFind}"><submit/></field>
-
+    <field name="workEffortId" title="${uiLabelMap.DemoOfbizProductionRunId}"><text-find/></field>
+    <field name="currentStatusId" title="${uiLabelMap.Status}">
+        <drop-down allow-multiple="true" >
+            <entity-options  entity-name="StatusItem" key-field-name="statusId">
+                <entity-constraint name="statusTypeId" value="PRODUCTION_RUN"/>
+            </entity-options>
+        </drop-down>
+    </field>
+    <field name="productId" title="${uiLabelMap.DemoOfbizProductProductId}"><text-find/></field>
+    <field name="workEffortRunName" title="${uiLabelMap.ProductionRunName} "><text-find/></field>
+    <field name="estimatedStartDate" title="${uiLabelMap.StartDate}"><date-find default-value="${nowTimestamp}"/></field>
+    <field name="facilityId" title="${uiLabelMap.FacilityId}">
+       <drop-down allow-empty="true">
+           <entity-options entity-name="Facility" key-field-name="facilityId" description="${facilityName} [${facilityId}]">
+               <entity-constraint name="facilityTypeId" value="WAREHOUSE"/>
+           </entity-options>
+       </drop-down>
+    </field>
+    <field name="submitButton" title="${uiLabelMap.DemoOfbizCommonFind}"><submit/></field>
   </form>
 
-
-<form name="ListProductionRun" type="list"  list-name="listIt" paginate-target="FindProductionRun"  separate-columns="true"
-      odd-row-style="alternate-row" header-row-style="header-row-2" default-table-style="basic-table hover-bar">
-
-<actions>
-    <service service-name="performFind" result-map="result" result-map-list="listIt">
-        <field-map field-name="inputFields" from-field="ofbizDemoCtx"/>
-        <field-map field-name="entityName" from-field="WorkEffortAndGoods"/>
-        <field-map field-name="orderBy" from-field="parameters.sortField"/>
-        <field-map field-name="viewIndex" from-field="viewIndex"/>
-        <field-map field-name="viewSize" from-field="viewSize"/>
-
-    </service>
-
-</actions>
-<field name="workEffortId" title="${parameters.ManufacturingProductionRunId}"/>
-<field name="currentStatus" title="${parameters.ManufacturingStatus}"/>
-<field name="productId" title="${parameters.ManufacturingProductId}"/>
-<field name="workEffortName" title="${parameters.ManufacturingWorkEffortName}"/>
-<field name="estimatedStartDate" title="${parameters.ManufacturingStartDate}"/>
-<field name="facilityId" title="${parameters.ManufacturingFacilityId}"/>
-</form>
-
+    <form name="ListFindProductionRun" type="list"  list-name="listIt" paginate-target="FindProductionRun"  separate-columns="true"
+        odd-row-style="alternate-row" header-row-style="header-row-2" default-table-style="basic-table hover-bar">
+        <actions>
+            <service service-name="performFind" result-map="result" result-map-list="listIt">
+                <field-map field-name="inputFields" from-field="requestParameters"/>
+                <field-map field-name="entityName" value="WorkEffortAndGoods"/>
+                <field-map field-name="viewIndex" from-field="viewIndex"/>
+                <field-map field-name="viewSize" from-field="viewSize"/>
+                <field-map field-name="orderBy" value="estimatedStartDate"/>
+            </service>
+        </actions>
+        <field name="workEffortName" title="${uiLabelMap.DemoOfbizProductionRunName}"><display/></field>
+        <field name="workEffortId" title="${uiLabelMap.DemoOfbizProductionRunId}"><display/></field>
+        <field name="currentStatusId" title="${uiLabelMap.DemoOfbizStatus}"><display/></field>
+        <field name="productId" title="${uiLabelMap.DemoOfbizProductId}"><display/></field>
+         <!--  <field name="workEffortName" title="${parameters.ManufacturingWorkEffortName}"><display/></field>-->
+        <field name="estimatedStartDate" title="${uiLabelMap.DemoOfbizStartDate}"><display/></field>
+        <field name="facilityId" title="${uiLabelMap.DemoOfbizFacilityId}"><display/></field>
+    </form>
 </forms>

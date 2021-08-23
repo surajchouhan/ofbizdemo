@@ -18,7 +18,7 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/ofbiz-properties.xsd">
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://ofbiz.apache.org/dtds/ofbiz-properties.xsd">
     <property key="OfbizDemoApplication">
         <value xml:lang="en_US">OfbizDemo Application</value>
         <value xml:lang="zh">OfbizDemo应用程�?</value>
@@ -43,51 +43,31 @@ under the License.
     <property key="OfbizDemoFind">
         <value xml:lang="en-US">Find</value>
     </property>
-    <property key="OfbizDemoFirstName">
-        <value xml:lang="en-US">First Name</value>
-    </property>
-    <property key="OfbizDemoId">
-        <value xml:lang="en-US">OFBiz Demo Id</value>
-    </property>
     <property key="OfbizDemoLastName">
         <value xml:lang="en-US">Last Name</value>
     </property>
     <property key="OfbizDemoAddFtl">
         <value xml:lang="en-US">OfbizDemoAddFtl</value>
     </property>
-
-
-    <property key ="FindProductionRun">
+    <property key="DemoOfbizCommonFind">
         <value xml:lang="en-US">Find</value>
     </property>
-    <property key="ManufacturingFindRouting">
-        <value xml:lang="en-US">Find</value>
+    <property key="DemoOfbizFacilityId">
+        <value xml:lang="en-US">Facility Id</value>
     </property>
-    <property key="ManufacturingFindRoutingTask">
-        <value xml:lang="en-US">Find</value>
+    <property key="DemoOfbizFindProductionRun">
+        <value xml:lang="en-US">Find Production Run</value>
     </property>
-    <property key="ManufacturingFindCalendar">
-      <value xml:lang="en-US">Find</value>
-     </property>
-     <property key="ManufacturingFindCosts">
-         <value xml:lang="en-US">Find</value>
-     </property>
-
-    <property key="ManufacturingFindBillOfMaterials">
-        <value xml:lang="en-US">Find</value>
+    <property key="DemoOfbizProductProductId">
+        <value xml:lang="en-US">Product Id</value>
     </property>
-    <property key="ManufacturingFindMRP">
-        <value xml:lang="en-US">Find</value>
+    <property key="DemoOfbizProductionRunId">
+        <value xml:lang="en-US">Production Run Id</value>
     </property>
-    <property key="ManufacturingFindShipmentPlans">
-        <value xml:lang="en-US">Find</value>
+    <property key="DemoOfbizStatus">
+        <value xml:lang="en-US">Status</value>
     </property>
-
-    <property key="ManufacturingFindReports">
-        <value xml:lang="en-US">Find</value>
+    <property key="DemoOfbizStartDate">
+        <value xml:lang="en-US">Start Date</value>
     </property>
-
-
-
-
 </resource>
