@@ -30,7 +30,7 @@ under the License.
             <widgets>
                 <decorator-screen name="OfbizDemoCommonDecorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
-                        <label text="Hello World!! :)"/>
+                        <label text="${uiLabelMap.OfbizDemoApplication}"/>
                         <screenlet title="Add Ofbiz Demo">
                             <include-form name="AddOfbizDemo" location="component://ofbizDemo/widget/OfbizDemoForms.xml"/>
                         </screenlet>
@@ -83,7 +83,7 @@ under the License.
             <widgets>
                 <decorator-screen name="OfbizDemoCommonDecorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
-                        <label style="h4" text="${uiLabelMap.OfbizDemoListOfbizDemos}"/>
+                        <label style="h4" text="${uiLabelMap.OfbizDemoApplication}"/>
                         <platform-specific>
                             <html><html-template location="component://ofbizDemo/webapp/ofbizDemo/crud/ListOfbizDemo.ftl"/></html>
                         </platform-specific>
@@ -105,6 +105,11 @@ under the License.
 <!--                <set field="nothing" value="${groovy: println('=======parameters======'+parameters)}"/>-->
 
                 <property-map resource="OfbizDemoUiLabels" map-name="uiLabelMap" global="true"/>
+                <entity-and entity-name="StatusItem" list="statuses">
+                    <field-map field-name="statusTypeId" value="PRODUCTION_RUN"/>
+                    <order-by field-name="sequenceId"/>
+                </entity-and>
+                <set field="nothing" value="${groovy: println('======statuses===='+statuses);}"/>
             </actions>
             <widgets>
                 <decorator-screen name="OfbizDemoCommonDecorator" location="${parameters.mainDecoratorLocation}">
@@ -113,10 +118,10 @@ under the License.
                             <widgets>
                                 <decorator-screen name="FindScreenDecorator" location="component://common/widget/CommonScreens.xml">
                                     <decorator-section name="search-options">
-                                        <include-form name="FindProductionRun" location="component://ofbizDemo/widget/OfbizDemoForms.xml"/>
+                                       <include-form name="FindProductionRun" location="component://ofbizDemo/widget/OfbizDemoForms.xml"/>-->
                                     </decorator-section>
                                     <decorator-section name="search-results">
-                                        <include-form name="ListFindProductionRun" location="component://ofbizDemo/widget/OfbizDemoForms.xml"/>
+                                       <include-form name="ListFindProductionRun" location="component://ofbizDemo/widget/OfbizDemoForms.xml"/>-->
                                     </decorator-section>
                                 </decorator-screen>
                             </widgets>
@@ -126,6 +131,68 @@ under the License.
             </widgets>
         </section>
     </screen>
+
+    <screen name="FindProductionRunFtl">
+        <section>
+            <actions>
+                <set field="titleProperty" value="DemoOfbizFindProductionRun"/>
+                <set field="headerItem" value="FindProductionRunFtl"/>
+                <!--                <set field="nothing" value="${groovy: println('=======parameters======'+parameters)}"/>-->
+                <entity-and entity-name="StatusItem" list="statuses">
+                    <field-map field-name="statusTypeId" value="PRODUCTION_RUN"/>
+                    <order-by field-name="sequenceId"/>
+                </entity-and>
+                <entity-and entity-name="Facility" list="facilities">
+                    <field-map field-name="facilityTypeId" value="WAREHOUSE"/>
+                </entity-and>
+                <script location="component://ofbizDemo/groovyScript/FindProductionRun.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="OfbizDemoCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <section>
+                            <widgets>
+                                <platform-specific>
+                                    <html><html-template location="component://ofbizDemo/Template/FindProductionRun.ftl"/></html>
+                                </platform-specific>
+                                <platform-specific>
+                                    <html><html-template location="component://ofbizDemo/Template/ListProductionRun.ftl"/></html>
+                                </platform-specific>
+                            </widgets>
+                        </section>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="CreateProductionRunDemo">
+        <section>
+            <actions>
+                <set field="titleProperty" value="DemoOfbizCreateProductionRunDemo"/>
+                <set field="headerItem" value="CreateProductionRunDemo"/>
+                <!--                <set field="nothing" value="${groovy: println('=======parameters======'+parameters)}"/>-->
+
+                <entity-and entity-name="Facility" list="facilities">
+                    <field-map field-name="facilityTypeId" value="WAREHOUSE"/>
+                </entity-and>
+<!--                <script location="component://ofbizDemo/groovyScript/FindProductionRun.groovy"/>-->
+            </actions>
+            <widgets>
+                <decorator-screen name="OfbizDemoCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <section>
+                            <widgets>
+                                <platform-specific>
+                                    <html><html-template location="component://ofbizDemo/Template/CreateProductionRunDemo.ftl"/></html>
+                                </platform-specific>
+                            </widgets>
+                        </section>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+
 
 </screens>
 

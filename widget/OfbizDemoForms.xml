@@ -73,17 +73,17 @@ under the License.
   <form name="FindProductionRun" type="single" target="FindProductionRun" default-map-name="parameters">
     <field name="workEffortTypeId"><hidden value="PROD_ORDER_HEADER"/></field>
     <field name="workEffortId" title="${uiLabelMap.DemoOfbizProductionRunId}"><text-find/></field>
-    <field name="currentStatusId" title="${uiLabelMap.Status}">
-        <drop-down allow-multiple="true" >
+    <field name="currentStatusId" title="${uiLabelMap.DemoOfbizStatus}">
+        <drop-down allow-multiple="false" >
             <entity-options  entity-name="StatusItem" key-field-name="statusId">
                 <entity-constraint name="statusTypeId" value="PRODUCTION_RUN"/>
             </entity-options>
         </drop-down>
     </field>
-    <field name="productId" title="${uiLabelMap.DemoOfbizProductProductId}"><text-find/></field>
-    <field name="workEffortRunName" title="${uiLabelMap.ProductionRunName} "><text-find/></field>
-    <field name="estimatedStartDate" title="${uiLabelMap.StartDate}"><date-find default-value="${nowTimestamp}"/></field>
-    <field name="facilityId" title="${uiLabelMap.FacilityId}">
+    <field name="productId" title="${uiLabelMap.DemoOfbizProductId}"><text-find/></field>
+    <field name="workEffortRunName" title="${uiLabelMap.DemoOfbizProductionRunName} "><text-find/></field>
+    <field name="estimatedStartDate" title="${uiLabelMap.DemoOfbizStartDate}"><date-find default-value="${nowTimestamp}"/></field>
+    <field name="facilityId" title="${uiLabelMap.DemoOfbizFacilityId}">
        <drop-down allow-empty="true">
            <entity-options entity-name="Facility" key-field-name="facilityId" description="${facilityName} [${facilityId}]">
                <entity-constraint name="facilityTypeId" value="WAREHOUSE"/>
@@ -104,12 +104,62 @@ under the License.
                 <field-map field-name="orderBy" value="estimatedStartDate"/>
             </service>
         </actions>
+        <row-actions>
+            <entity-one entity-name="Product" value-field="product"/>
+            <entity-one entity-name="Uom" value-field="uom">
+                <field-map field-name="uomId" from-field="product.quantityUomId"/>
+            </entity-one>
+            <set field="productName" from-field="product.productName"/>
+            <entity-one entity-name="Facility" value-field="facility"/>
+            <set field="facilityName" from-field="facility.facilityName"/>
+        </row-actions>
+        <field name="workEffortId" title=" " widget-style="buttontext">
+            <hyperlink description="${workEffortId}" target="/manufacturing/control/ShowProductionRun" target-type="inter-app">
+                <parameter param-name="productionRunId" from-field="workEffortId"/>
+            </hyperlink>
+        </field>
         <field name="workEffortName" title="${uiLabelMap.DemoOfbizProductionRunName}"><display/></field>
-        <field name="workEffortId" title="${uiLabelMap.DemoOfbizProductionRunId}"><display/></field>
-        <field name="currentStatusId" title="${uiLabelMap.DemoOfbizStatus}"><display/></field>
+        <field name="currentStatusId" title="${uiLabelMap.DemoOfbizStatus}">
+            <display-entity entity-name="StatusItem" key-field-name="statusId"/>
+        </field>
         <field name="productId" title="${uiLabelMap.DemoOfbizProductId}"><display/></field>
-         <!--  <field name="workEffortName" title="${parameters.ManufacturingWorkEffortName}"><display/></field>-->
+        <field name="productName" title="${uiLabelMap.DemoOfbizProductName}"><display/></field>
         <field name="estimatedStartDate" title="${uiLabelMap.DemoOfbizStartDate}"><display/></field>
         <field name="facilityId" title="${uiLabelMap.DemoOfbizFacilityId}"><display/></field>
+        <field name="facilityName" title="${uiLabelMap.DemoOfbizFacilityName}">
+            <display/>
+        </field>
+
+    </form>
+    <form name="ShowProductionRun" type="single" target="productionRunProduce" title="" default-map-name="productionRunData"
+          header-row-style="header-row" default-table-style="basic-table">
+        <actions>
+            <set field="useRequestParameters" value="false" type="Boolean"/>
+        </actions>
+        <field name="workEffortId"><hidden/></field>
+        <field name="productId" title="${uiLabelMap.DemoOfbizProductProductName}">
+            <display-entity entity-name="Product" description="${internalName} [${productId}]"/>
+        </field>
+        <field name="currentStatusId">
+            <display-entity entity-name="StatusItem" key-field-name="statusId"/>
+        </field>
+       <!-- <field name="quantityToProduce" title="${uiLabelMap.ManufacturingQuantityToProduce}">
+            <display/>
+        </field>-->
+        <field name="estimatedStartDate" title="${uiLabelMap.DemoOfbizEstimatedStartDate}"><display/></field>
+        <field name="actualStartDate" title="${uiLabelMap.CommonActualStartDate}"><display/></field>
+        <field name="estimatedCompletionDate" title="${uiLabelMap.DemoOfbizEstimatedCompletionDate}"><display/></field>
+       <!-- <field name="actualCompletionDate" title="${uiLabelMap.ManufacturingActualCompletionDate}"><display/></field>-->
+        <field name="productionRunName"  title="${uiLabelMap.DemoOfbizProductionRunName}"><display/></field>
+        <field name="description" title="${uiLabelMap.CommonDescription}"><display/></field>
+
+        <field name="manufacturerId">
+            <display-entity entity-name="PartyNameView" key-field-name="partyId" description="${groupName} ${firstName} ${lastName} [${partyId}]"/>
+        </field>
+        <field name="facilityId" title="${uiLabelMap.DemoOfbizFacilityFacility}">
+            <display-entity entity-name="Facility" description="${facilityName} [${facilityId}]"/>
+        </field>
+        <field name="quantityProduced" title="${uiLabelMap.ManufacturingQuantityProduced}"><display/></field>
+        <field name="quantityRejected" title="${uiLabelMap.ManufacturingQuantityRejected}"><display/></field>
     </form>
 </forms>

@@ -81,12 +81,44 @@ under the License.
         <response name="success" type="view" value="ListProductionRun"/>
     </request-map>
 
+    <request-map uri="FindProductionRunFtl">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="FindProductionRunFtl"/>
+    </request-map>
+    <request-map uri="ListProductionRunFtl">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="ListProductionRunFtl"/>
+    </request-map>
+    <request-map uri="CreateProductionRunDemo">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="CreateProductionRunDemo"/>
+    </request-map>
+    <request-map uri="createProductionRunDemo">
+        <security https="true" auth="true"/>
+        <event type="service"  invoke="createProductionRunDemo"/>
+        <response name="success" type="view" value="FindProductionRunFtl"/>
+        <response name="error" type="view" value="CreateProductionRunDemo"/>
+    </request-map>
+    <request-map uri="LookupProduct">
+        <security auth="true" https="true"/>
+        <response name="success" type="view" value="LookupProduct"/>
+    </request-map>
+    <request-map uri="LookupRouting">
+        <security auth="true" https="true"/>
+        <response name="success" type="view" value="LookupRouting"/>
+    </request-map>
+
+
     <!-- View Mappings -->
     <view-map name="main" type="screen" page="component://ofbizDemo/widget/OfbizDemoScreens.xml#main"/>
     <view-map name="FindOfbizDemo" type="screen" page="component://ofbizDemo/widget/OfbizDemoScreens.xml#FindOfbizDemo"/>
     <view-map name="FindProductionRun" type="screen" page="component://ofbizDemo/widget/OfbizDemoScreens.xml#FindProductionRun"/>
     <view-map name="AddOfbizDemoFtl" type="screen" page="component://ofbizDemo/widget/OfbizDemoScreens.xml#AddOfbizDemoFtl"/>
-    <view-map name="ListProductionRun" type="screen" page="component://ofbizDemo/widget/ofbizDemoScreens.xml#ListProductionRun"/>
-
+    <view-map name="ListProductionRun" type="screen" page="component://ofbizDemo/widget/OfbizDemoScreens.xml#ListProductionRun"/>
+    <view-map name="FindProductionRunFtl" type="screen" page="component://ofbizDemo/widget/OfbizDemoScreens.xml#FindProductionRunFtl"/>
+    <view-map name="ListProductionRunFtl" type="screen" page="component://ofbizDemo/widget/OfbizDemoScreens.xml#ListProductionRunFtl"/>
+    <view-map name="CreateProductionRunDemo" type="screen" page="component://ofbizDemo/widget/OfbizDemoScreens.xml#CreateProductionRunDemo"/>
+    <view-map name="LookupProduct" type="screen" page="component://product/widget/catalog/LookupScreens.xml#LookupProduct"/>
+    <view-map name="LookupRouting" type="screen" page="component://manufacturing/widget/manufacturing/LookupScreens.xml#LookupRouting"/>
 </site-conf>
 

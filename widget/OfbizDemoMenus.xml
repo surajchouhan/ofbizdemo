@@ -32,6 +32,18 @@ under the License.
             </condition>
             <link target="FindProductionRun"/>
         </menu-item>
+        <menu-item name="FindProductionRunFtl" title="${uiLabelMap.DemoOfbizFindProductionRunFtl}">
+            <condition>
+                <if-has-permission permission="OFBIZDEMO" action="_CREATE"/>
+            </condition>
+            <link target="FindProductionRunFtl"/>
+        </menu-item>
+        <menu-item name="CreateProductionRunDemo" title="${uiLabelMap.DemoOfbizCreateProductionRunDemo}">
+            <condition>
+                <if-has-permission permission="OFBIZDEMO" action="_CREATE"/>
+            </condition>
+            <link target="CreateProductionRunDemo"/>
+        </menu-item>
     </menu>
 
 

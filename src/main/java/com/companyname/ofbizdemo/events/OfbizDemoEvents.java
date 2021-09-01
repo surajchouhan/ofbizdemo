@@ -44,5 +44,10 @@ public class OfbizDemoEvents {
         return "success";
     }
 
+    // New Event @name createProductionRunDemoEvent
+    // Validation for productId
+    // Prepare the service context
+    // call service createProductionRunDemo and send all the parameters which require for this service
+    // set productionRunId in request
 
 }
