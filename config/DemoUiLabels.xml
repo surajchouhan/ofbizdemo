@@ -19,6 +19,78 @@ under the License.
 -->
 
 <resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://ofbiz.apache.org/dtds/ofbiz-properties.xsd">
+    <property key="DemoOfbizCommonFind">
+        <value xml:lang="en">Find</value>
+    </property>
+    <property key="DemoOfbizCommonUpdate">
+        <value xml:lang="en">Update</value>
+    </property>
+    <property key="DemoOfbizCreateDependentProductionRun">
+        <value xml:lang ="en">Create Dependent Production Run</value>
+    </property>
+    <property key="DemoOfbizCreateProductionRunDemo">
+        <value xml:lang="en">Create Production Run Demo</value>
+    </property>
+    <property key="DemoOfbizDescription">
+        <value xml:lang ="en">Description</value>
+    </property>
+    <property key="DemoOfbizFacilityId">
+        <value xml:lang="en">Facility Id</value>
+    </property>
+    <property key="DemoOfbizFacilityName">
+        <value xml:lang="en">Facility Name</value>
+    </property>
+   <property key="DemoOfbizFindProductionRun">
+        <value xml:lang="en">Find Production Run</value>
+    </property>
+    <property key="DemoOfbizFindProductionRunFtl">
+        <value xml:lang="en">Find Production Run Ftl</value>
+    </property>
+    <property key="DemoOfbizProductId">
+        <value xml:lang="en">Product Id</value>
+    </property>
+    <property key="DemoOfbizProductName">
+        <value xml:lang="en">Product Name</value>
+    </property>
+    <property key="DemoOfbizProductionRunId">
+        <value xml:lang="en">Production Run Id</value>
+    </property>
+    <property key="DemoOfbizProductionRunName">
+        <value xml:lang="en">Production Run Name</value>
+    </property>
+    <property key="DemoOfbizProductionRunTypeId">
+        <value xml:lang="en">Production Run typeId</value>
+    </property>
+    <property key ="DemoOfbizQuantity">
+        <value xml:lang ="en">Quantity</value>
+    </property>
+    <property key ="DemoOfbizResult">
+        <value xml:lang ="en">Result</value>
+    </property>
+    <property key ="DemoOfbizRoutingId">
+        <value xml:lang ="en">Routing id</value>
+    </property>
+    <property key="DemoOfbizStartDate">
+        <value xml:lang="en">Start Date</value>
+    </property>
+    <property key="DemoOfbizStatus">
+        <value xml:lang="en">Status</value>
+    </property>
+    <property key="DemoOfbizStartDate">
+        <value xml:lang="en">Start Date</value>
+    </property>
+    <property key="DemoOfbizSubmit">
+        <value xml:lang ="en">Submit</value>
+    </property>
+    <property key="DemoOfbizUpdateProductionRunDemo">
+        <value xml:lang="en">Update Production Run Demo</value>
+    </property>
+    <property key="DemoOfbizCommonUpdate">
+        <value xml:lang="en">Update</value>
+    </property>
+    <property key="DemoOfbizWorkEffortGoodStdTypeId">
+        <value xml:lang="en">Work Effort Good Type</value>
+    </property>
     <property key="OfbizDemoApplication">
         <value xml:lang="en">OfbizDemo Application</value>
         <value xml:lang="zh">OfbizDemo应用程序</value>
@@ -42,69 +114,8 @@ under the License.
     <property key="OfbizDemoLastName">
         <value xml:lang="en">Last Name</value>
     </property>
-    <property key="DemoOfbizCreateDependentProductionRun">
-        <value xml:lang ="en">Create Dependent Production Run</value>
-    </property>
     <property key="OfbizDemoAddFtl">
         <value xml:lang="en">OfbizDemoAddFtl</value>
     </property>
-    <property key="DemoOfbizCreateProductionRunDemo">
-        <value xml:lang="en">Create Production Run Demo</value>
-    </property>
-    <property key="DemoOfbizDescription">
-        <value xml:lang ="en">Description</value>
-    </property>
-    <property key ="DemoOfbizRoutingId">
-        <value xml:lang ="en">Routing id</value>
-    </property>
-
-    <property key="DemoOfbizStartDate">
-        <value xml:lang="en">Start Date</value>
-    </property>
-    <property key="DemoOfbizCommonFind">
-        <value xml:lang="en">Find</value>
-    </property>
-    <property key="DemoOfbizFacilityId">
-        <value xml:lang="en">Facility Id</value>
-    </property>
-    <property key="DemoOfbizFacilityName">
-        <value xml:lang="en">Facility Name</value>
-    </property>
-   <property key="DemoOfbizFindProductionRun">
-        <value xml:lang="en">Find Production Run</value>
-    </property>
-    <property key="DemoOfbizFindProductionRunFtl">
-        <value xml:lang="en">Find Production Run Ftl</value>
-    </property>
-
-    <property key="DemoOfbizProductId">
-        <value xml:lang="en">Product Id</value>
-    </property>
-    <property key="DemoOfbizProductName">
-        <value xml:lang="en">Product Name</value>
-    </property>
-    <property key="DemoOfbizProductionRunId">
-        <value xml:lang="en">Production Run Id</value>
-    </property>
-    <property key="DemoOfbizProductionRunName">
-        <value xml:lang="en">Production Run Name</value>
-    </property>
-    <property key="DemoOfbizProductionRunTypeId">
-        <value xml:lang="en">Production Run typeId</value>
-    </property>
-    <property key ="DemoOfbizQuantity">
-        <value xml:lang ="en">Quantity</value>
-    </property>
-    <property key="DemoOfbizStatus">
-        <value xml:lang="en">Status</value>
-    </property>
-    <property key="DemoOfbizStartDate">
-        <value xml:lang="en">Start Date</value>
-    </property>
-    <property key="DemoOfbizSubmit">
-        <value xml:lang ="en">Submit</value>
-    </property>
-    <property key="DemoOfbizWorkEffortGoodStdTypeId">
-        <value xml:lang="en">Work Effort Good Type</value>
-    </property>
 </resource>
+

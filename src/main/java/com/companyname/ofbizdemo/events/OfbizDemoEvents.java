@@ -43,11 +43,4 @@ public class OfbizDemoEvents {
         request.setAttribute("_EVENT_MESSAGE_", "OFBiz Demo created succesfully.");
         return "success";
     }
-
-    // New Event @name createProductionRunDemoEvent
-    // Validation for productId
-    // Prepare the service context
-    // call service createProductionRunDemo and send all the parameters which require for this service
-    // set productionRunId in request
-
 }

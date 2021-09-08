@@ -42,20 +42,16 @@ under the License.
     <!-- Request Mappings -->
     <request-map uri="createOfbizDemo"><security https="true" auth="true"/><response name="success" type="view" value="main"/></request-map>
     <request-map uri="FindOfbizDemo"><security https="true" auth="true"/><response name="success" type="view" value="FindOfbizDemo"/></request-map>
-
-
     <request-map uri="createOfbizDemo">
         <security https="true" auth="true"/>
         <event type="service" invoke="createOfbizDemoByJavaService"/>
         <response name="success" type="view" value="main"/>
     </request-map>
-
     <request-map uri="createOfbizDemo">
         <security https="true" auth="true"/>
         <event type="service" invoke="createOfbizDemoByGroovyService"/>
         <response name="success" type="view" value="main"/>
     </request-map>
-
     <request-map uri="createOfbizDemoEvent">
         <security https="true" auth="true"/>
         <event type="java" path="com.companyname.ofbizdemo.events.OfbizDemoEvents" invoke="createOfbizDemoEvent"/>
@@ -73,9 +69,7 @@ under the License.
         <security https="true" auth="true"/>
         <response name="success" type="view" value="FindProductionRun"/>
     </request-map>
-
     <!-- request map for List Production Run-->
-
     <request-map uri="ListProductionRun">
         <security https="true" auth="true"/>
         <response name="success" type="view" value="ListProductionRun"/>
@@ -107,6 +101,36 @@ under the License.
         <security auth="true" https="true"/>
         <response name="success" type="view" value="LookupRouting"/>
     </request-map>
+    <request-map uri="CreateProductionRunJavaEvent">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="CreateProductionRunJavaEvent"/>
+    </request-map>
+    <request-map uri="createProductionRunJavaEvent">
+        <security https="true" auth="true"/>
+        <event type="java" path="com.companyname.ofbizdemo.events.ProductionRunEvents" invoke="createProductionRunJavaEvent"/>
+        <response name="success" type="view" value="FindProductionRunFtl"/>
+        <response name="error" type="view" value="CreateProductionRunJavaEvent"/>
+    </request-map>
+    <request-map uri="CreateProductionRunGroovyService">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="CreateProductionRunGroovyService"/>
+    </request-map>
+    <request-map uri="createProductionRunGroovyService">
+        <security https="true" auth="true"/>
+        <event type="service"  invoke="createProductionRunGroovyService"/>
+        <response name="success" type="view" value="FindProductionRunFtl"/>
+        <response name="error" type="view" value="CreateProductionRunGroovyService"/>
+    </request-map>
+    <request-map uri="UpdateProductionRunDemo">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="UpdateProductionRunDemo"/>
+    </request-map>
+    <request-map uri="updateProductionRunDemo">
+        <security https="true" auth="true"/>
+        <event type="service"  invoke="updateProductionRunDemo"/>
+        <response name="success" type="view" value="FindProductionRunFtl"/>
+        <response name="error" type="view" value="UpdateProductionRunDemo"/>
+    </request-map>
 
 
     <!-- View Mappings -->
@@ -118,6 +142,9 @@ under the License.
     <view-map name="FindProductionRunFtl" type="screen" page="component://ofbizDemo/widget/OfbizDemoScreens.xml#FindProductionRunFtl"/>
     <view-map name="ListProductionRunFtl" type="screen" page="component://ofbizDemo/widget/OfbizDemoScreens.xml#ListProductionRunFtl"/>
     <view-map name="CreateProductionRunDemo" type="screen" page="component://ofbizDemo/widget/OfbizDemoScreens.xml#CreateProductionRunDemo"/>
+    <view-map name="CreateProductionRunJavaEvent" type="screen" page="component://ofbizDemo/widget/OfbizDemoScreens.xml#CreateProductionRunJavaEvent"/>
+    <view-map name="CreateProductionRunGroovyService" type="screen" page="component://ofbizDemo/widget/OfbizDemoScreens.xml#CreateProductionRunGroovyService"/>
+    <view-map name="UpdateProductionRunDemo" type="screen" page="component://ofbizDemo/widget/OfbizDemoScreens.xml#UpdateProductionRunDemo"/>
     <view-map name="LookupProduct" type="screen" page="component://product/widget/catalog/LookupScreens.xml#LookupProduct"/>
     <view-map name="LookupRouting" type="screen" page="component://manufacturing/widget/manufacturing/LookupScreens.xml#LookupRouting"/>
 </site-conf>

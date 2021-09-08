@@ -39,10 +39,16 @@ under the License.
             <link target="FindProductionRunFtl"/>
         </menu-item>
         <menu-item name="CreateProductionRunDemo" title="${uiLabelMap.DemoOfbizCreateProductionRunDemo}">
-            <condition>
-                <if-has-permission permission="OFBIZDEMO" action="_CREATE"/>
-            </condition>
             <link target="CreateProductionRunDemo"/>
+        </menu-item>
+        <menu-item name="CreateProductionRunJavaEvent" title="${uiLabelMap.DemoOfbizCreateProductionRunDemo} Java Event">
+            <link target="CreateProductionRunJavaEvent"/>
+        </menu-item>
+        <menu-item name="CreateProductionRunGroovyService" title="${uiLabelMap.DemoOfbizCreateProductionRunDemo} Groovy Service">
+            <link target="CreateProductionRunGroovyService"/>
+        </menu-item>
+        <menu-item name="UpdateProductionRunDemo" title="${uiLabelMap.DemoOfbizUpdateProductionRunDemo}">
+            <link target="UpdateProductionRunDemo"/>
         </menu-item>
     </menu>
 

@@ -3,22 +3,22 @@
        <h3>Create Production Run from Java service</h3>
     </div>
        <div ="screenlet-body">
-            <form id="CreateProductionRunJavaService" name="CreateProductionRunJavaService" method="post" action="<@ofbizUrl>createProductionRunDemo</@ofbizUrl>">
+            <form id="CreateProductionRunJavaEvent" name="CreateProductionRunJavaEvent" method="post" action="<@ofbizUrl>createProductionRunJavaEvent</@ofbizUrl>">
                 <table width="100%">
                     <tr>
                        <td width="20%">
                           <label class="control-label" for="productId">${uiLabelMap.DemoOfbizProductId}</label>
                        </td>
                        <td width="2%">&nbsp;</td>
-                        <td width="78%"><@htmlTemplate.lookupField name="productId" id="productId" formName="CreateProductionRunJavaService" fieldFormName="LookupProduct"/></td>
+                        <td width="78%"><@htmlTemplate.lookupField name="productId" id="productId" formName="CreateProductionRunJavaEvent" fieldFormName="LookupProduct"/></td>
                     </tr>
                     <tr>
                         <td width="20%">
                              <label class="control-label"for="quantity">${uiLabelMap.DemoOfbizQuantity}</label>
                        </td>
-                       <td width="2%">&nbsp;</td>
+                       <td>&nbsp;</td>
 
-                       <td width="78%">
+                       <td width="2%">
                            <input type="text" name="quantity" id="quantity" value="${parameters.quantity!}"  class='required' maxLength="100"/>*
                        </td>
                     </tr>
@@ -26,8 +26,8 @@
                         <td width="20%">
                             <label class="control-label"  for="startDate">${uiLabelMap.DemoOfbizStartDate}</label>
                         </td>
-                         <td width="2%">&nbsp;</td>
-                        <td width="78%">
+                         <td>&nbsp;</td>
+                        <td width="2%">
                             <@htmlTemplate.renderDateTimeField name="startDate" event="" action="" className="" alert="" title="" value="${parameters.startDate!}" size="20" maxlength="50" id="startDate" dateType="timestamp" shortDateInput=false timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>
                         </td>
                     </tr>
@@ -35,12 +35,12 @@
                         <td width="20%">
                              <label  class="control-label"  for="facilityId">${uiLabelMap.DemoOfbizFacilityId}</label>
                         </td>
-                        <td width="2%">&nbsp;</td>
-                        <td width="78%">
+                         <td width="2%">&nbsp;</td>
+                         <td width="78%">
                              <select name="facilityId" id="facilityId">
-                                 <#list facilities as facility>
-                                   <option value="${facility.facilityId!}">${facility.facilityName!}</option>
-                                 </#list>
+                             <#list facilities as facility>
+                               <option value="${facility.facilityId!}">${facility.facilityName!}</option>
+                             </#list>
                              </select>
                         </td>
                     </tr>
@@ -48,24 +48,26 @@
                        <td width="20%">
                             <label class="control-label"  for="routingId">${uiLabelMap.DemoOfbizRoutingId}</label>
                        </td>
-                       <td width="2%">&nbsp;</td>
-                       <td width="78%"><@htmlTemplate.lookupField name="routingId" id="routingId" formName="CreateProductionRunJavaService" fieldFormName="LookupRouting"/></td>
+
+                        <td width="2%">&nbsp;</td>
+                         <td width="78%"><@htmlTemplate.lookupField name="routingId" id="routingId" formName="CreateProductionRunJavaService" fieldFormName="LookupRouting"/></td>
                     </tr>
                     <tr>
                        <td width="20%">
                             <label class="control-label"  for="productionRunName">${uiLabelMap.DemoOfbizProductionRunName}</label>
                        </td>
-                       <td width="2%">&nbsp;</td>
-                       <td width="78%">
-                          <input type="text" name="workEffortName" id="productionRunName" value="${parameters.workEffortName!}"  class='required' maxLength="100"/>
+                       <td>&nbsp;</td>
+                       <td width="2%">
+                          <input type="text" name="productionRunName" id="productionRunName" value="${parameters.productionRunName!}"  class='required' maxLength="100"/>
                        </td>
                     </tr>
                     <tr>
                        <td width="20%">
                            <label class="control-label" for="description">${uiLabelMap.DemoOfbizDescription}</label>
                        </td>
-                       <td width="2%">&nbsp;</td>
-                       <td width="78%">
+                       <td>&nbsp;</td>
+
+                       <td width="2%">
                             <input type="text" name="description" id="description" value="${parameters.description!}"/>
                        </td>
                     </tr>
@@ -73,17 +75,18 @@
                         <td width="20%">
                            <label class="control-label" for="createDependentProductionRun">${uiLabelMap.DemoOfbizCreateDependentProductionRun}</label>
                         </td>
-                        <td width="2%">&nbsp;</td>
+                          <td width="2%">&nbsp;</td>
                         <td width="78%">
                             <select name="createDependentProductionRun" id="createDependentProductionRun">
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
-                            </select>
                         </td>
                     <tr>
-                        <td width="20%"></td>
-                        <td width="2%">&nbsp;</td>
-                        <td width="78%">
+                        <td>
+                        </td>
+                        <td>&nbsp;</td>
+
+                        <td width="2%">
                             <input type="submit" value="Submit"/>
                         </td>
                     </tr>
@@ -92,3 +95,14 @@
             </form>
        </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+

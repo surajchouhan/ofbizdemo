@@ -6,6 +6,7 @@ def createOfbizDemo() {
         ofbizDemo = delegator.makeValue("OfbizDemo");
         // Auto generating next sequence of ofbizDemoId primary key
         ofbizDemo.setNextSeqId();
+        delegator.getNext
         // Setting up all non primary key field values from context map
         ofbizDemo.setNonPKFields(context);
         // Creating record in database for OfbizDemo entity for prepared value
@@ -16,5 +17,15 @@ def createOfbizDemo() {
         logError(e.getMessage());
         return error("Error in creating record in OfbizDemo entity ........");
     }
+    return result;
+
+    //
+    result =[:]
+    createProductionRunmap = [:]
+    createProductionRunmap.put("productId", parameters.productId)
+    serviceResult = dispatcher.runSync()
+
+    productionRunId = serviceResult.productionRunId
+    result.productionRunId = productionRunId
     return result;
 }

@@ -1,32 +1,25 @@
 import org.apache.ofbiz.entity.condition.EntityConditionBuilder
-
-
 exprBldr = new EntityConditionBuilder()
 condition = exprBldr.AND() {
     if (parameters?.productionRunId) {
         EQUALS(workEffortId: parameters?.productionRunId)
     }
-    if (parameters.currentStatusId) {
-        IN(currentStatusId: parameters.currentStatusId)
+    if (parameters.statusId) {
+        IN(currentStatusId: parameters.statusId)
     }
     if (parameters?.productId) {
         EQUALS(productId: parameters.productId)
     }
+    if (parameters?.facilityId) {
+        EQUALS(facilityId: parameters.facilityId)
+    }
     EQUALS(workEffortTypeId: "PROD_ORDER_HEADER")
 
-  //  if (parameters.productionRunTypeId){
-    //    IN(workEffortTypeId:parameters.productionRunTypeId)
-   // }
-//    if(parameters.startDate){
-//        IN(actualStartDate:parameters.startDate)
-//    }
-
     if (parameters.productionRunName) {
-        EQUALS(workEffortName:parameters.productionRunName)
+        LIKE(workEffortName : parameters.productionRunName + "%")
     }
-
 }
-
+println("=====condition====="+condition)
 workEfforts = from("WorkEffortAndGoods").where(condition).queryList()
 productionRunList = []
 workEfforts.each { workEffort ->
@@ -39,36 +32,3 @@ workEfforts.each { workEffort ->
     productionRunList.add(workEffortMap)
 }
 context.productionRunList = productionRunList
-/*
-if(productionRunId) {
-    supplierInfo = [:]
-    supplierInfo.partyId = partyId
-    ProductionRun=from("WorkEffort").where("workEffortId", productionRunId, "workEffortTypeId","PRODUCTION_RUN" ).filterByDate().queryFirst()
-    productRunList - [];
-
-    productRunList = from("")
-    context.productRunList = productRunList
-
-    productionRunId = parameters.productionRunId
-    if (productionRunId) {
-        ProductionRun productionRun = new ProductionRun(productionRunId, delegator, dispatcher)
-        if (productionRun.exist()) {
-            productionRunId = productionRun.getGenericValue().workEffortId
-            context.productionRunId = productionRunId
-            context.productionRun = productionRun.getGenericValue()
-            productionRunData = [:]
-            productionRunData.productionRunId = productionRunId
-            productionRunData.productId = productionRun.getProductProduced().productId
-            productionRunData.currentStatusId = productionRun.getGenericValue().currentStatusId
-            productionRunData.facilityId = productionRun.getGenericValue().facilityId
-            productionRunData.workEffortName = productionRun.getProductionRunName()
-            productionRunData.description = productionRun.getDescription()
-            productionRunData.quantity = productionRun.getQuantity()
-            productionRunData.estimatedStartDate = productionRun.getEstimatedStartDate()
-            productionRunData.estimatedCompletionDate = productionRun.getEstimatedCompletionDate()
-
-            context.productionRunData = productionRunData
-
-        }
-    }
-*/
